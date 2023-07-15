@@ -1,0 +1,11 @@
+<p>category-detail works!</p>
+<div *ngIf="category">
+
+  <h2>{{category.title | uppercase}} Details</h2>
+  <div><span>id: </span>{{category.id}}</div>
+  <div>
+    <label for="category-title">category title: </label>
+    <input id="category-title" [(ngModel)]="category.title" placeholder="title">
+  </div>
+
+</div>
