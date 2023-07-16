@@ -24,18 +24,31 @@ export class CategoriesComponent {
     this.categoryService.getCategories().subscribe(categories => this.categories = categories); ;
   }
 
-
-  category: Category = {
-
-    id:1,
-    title: 'Category A',
-    description: 'Category A description',
-    imageUrl: 'Image url'
-  };
-
-  selectedCategory?: Category;
-  onSelect(category: Category): void {
-    this.selectedCategory = category;
+  add(title: string): void {
+    title = title.trim();
+    if (!title) { return; }
+    this.categoryService.addCategory({ title } as Category)
+      .subscribe(category => {
+        this.categories.push(category);
+      });
   }
+
+  delete(category: Category): void {
+    this.categories = this.categories.filter(h => h !== category);
+    this.categoryService.deleteCategory(category.id).subscribe();
+  }
+
+  // category: Category = {
+
+  //   id:1,
+  //   title: 'Category A',
+  //   description: 'Category A description',
+  //   imageUrl: 'Image url'
+  // };
+
+  // selectedCategory?: Category;
+  // onSelect(category: Category): void {
+  //   this.selectedCategory = category;
+  // }
 
 }

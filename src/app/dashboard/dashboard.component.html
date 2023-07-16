@@ -1,0 +1,20 @@
+<p>dashboard works!</p>
+
+
+<h2>Top Categries</h2>
+<div class="categories-menu">
+  <a *ngFor="let category of categories"  routerLink="/categories/detail/{{category.id}}">
+    {{category.title}}
+  </a>
+</div>
+
+
+<!-- <h2>Top Categries</h2>
+<div class="categories-menu">
+  <a *ngFor="let category of categories"
+      routerLink="/categories/detail/{{category.id}}">
+      {{category.title}}
+  </a>
+</div> -->
+
+<app-category-search></app-category-search>

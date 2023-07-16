@@ -1,5 +1,13 @@
 <p>categories works!</p>
+<div>
+  <label for="new-category">Category title: </label>
+  <input id="new-category" #categoryTitle />
 
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="add-button" (click)="add(categoryTitle.value); categoryTitle.value=''">
+    Add category
+  </button>
+</div>
 <!-- <div>
   <label for="name">Category title:</label>
   <input id="name" [(ngModel)]="category.title" placeholder="Title">
@@ -21,11 +29,16 @@
 <h2>Categories</h2>
 <ul class="categories">
   <li *ngFor="let category of categories">
-    <button [class.selected]="category === selectedCategory" type="button" (click)="onSelect(category)">
+    <a routerLink="/categories/detail/{{category.id}}">
+      <span class="badge">{{category.id}}</span> {{category.title}}
+    </a>
+    <span><button type="button" class="delete" title="delete category"
+  (click)="delete(category)">x</button></span>
+    <!-- <button [class.selected]="category === selectedCategory" type="button" (click)="onSelect(category)">
       <span class="badge">{{category.id}}</span>
       <span class="name">{{category.title}}</span>
-    </button>
+    </button> -->
   </li>
 </ul>
 
-<app-category-detail [category]="selectedCategory"></app-category-detail>
+<!-- <app-category-detail [category]="selectedCategory"></app-category-detail> -->
