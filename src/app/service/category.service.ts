@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Category } from '../interfaces/Category';
 import { CATEGORIES } from '../mock/mock-category';
 import { catchError, map, tap } from 'rxjs/operators';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,9 @@ export class CategoryService {
   constructor(private http: HttpClient) { }
 
 
-  private categoriesUrl = 'api/categories'; 
+  //private categoriesUrl = 'api/categories'; 
+  private categoriesUrl = environment.ecommAdminApiEndpoint+'/category'; 
+
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -21,6 +24,7 @@ export class CategoryService {
   getCategories(): Observable<Category[]>{
     // const categories = of(CATEGORIES);
     // return categories;
+    console.log(this.categoriesUrl);
     return this.http.get<Category[]>(this.categoriesUrl)
   }
 
