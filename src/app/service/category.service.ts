@@ -18,7 +18,9 @@ export class CategoryService {
   private categoriesUrl = environment.ecommAdminApiEndpoint+'/category'; 
 
   private httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    headers: new HttpHeaders(
+      //{ 'Content-Type': 'application/json', 'Referrer-Policy':'no-referrer'}
+    )
   };
 
   getCategories(): Observable<Category[]>{

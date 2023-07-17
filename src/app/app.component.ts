@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Ecommerce Admin';
+
+  status = false;
+  addToggle()
+  {
+    this.status = !this.status;       
+  }
 }
