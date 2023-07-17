@@ -13,11 +13,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let category of categories">
-          <th scope="row">1</th>
+        <tr *ngFor="let category of categories; let i = index">
+          <th scope="row">{{i+1}}</th>
             <td>{{category.title}}</td>
             <td>{{category.slug}}</td>
-            <td>{{category.imageUrl}}</td>
+            <td><img src="{{category.imageUrl}}" width="15px"></td>
             <td>{{category.description}}</td>
             <td>
               <!-- <a routerLink="/categories/detail/{{category.id}}" class="bi bi-pencil-square"></a> -->

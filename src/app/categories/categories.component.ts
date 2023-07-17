@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+//import * as faker from '../../../node_modules/faker';
 import { Category } from '../interfaces/Category';
 import { CATEGORIES } from '../mock/mock-category';
 import { CategoryService } from '../service/category.service';
