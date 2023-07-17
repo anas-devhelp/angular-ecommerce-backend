@@ -20,8 +20,9 @@
             <td>{{category.imageUrl}}</td>
             <td>{{category.description}}</td>
             <td>
-              <a routerLink="/categories/detail/{{category.id}}"> <span class="badge">{{category.id}}</span> {{category.title}}</a>
-              <span><button type="button" class="delete" title="delete category" (click)="delete(category)">x</button></span>
+              <!-- <a routerLink="/categories/detail/{{category.id}}" class="bi bi-pencil-square"></a> -->
+              <span><button routerLink="/categories/detail/{{category.id}}" type="button" class="bi bi-pencil-fill" title="Edit category"></button></span>&nbsp;
+              <span><button type="button" class="bi bi-trash2" title="Delete category" (click)="delete(category)"></button></span>
             </td>
         </tr>
         <a routerLink="/add-category"> <span class="badge">Add new</span></a>
