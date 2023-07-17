@@ -1,6 +1,6 @@
 <div id="delete-dialog-{{deleteId}}" class="modal d-block p-4 py-md-5" tabindex="-1" role="dialog" *ngIf="deleteId>0">
-  <div class="modal-dialog">
-    <div class="modal-content">
+  <div class="modal-dialog ">
+    <div class="modal-content bg-danger text-white">
       <div class="modal-header">
         <h5 class="modal-title">Confirmation</h5>
         <button type="button" class="close" (click)="handleCancelAction()">
@@ -12,7 +12,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger"    (click)="handleConfirmAction()">Delete</button>
-        <button type="button" class="btn btn-secondary" (click)="handleCancelAction()">Cancel</button>
+        <button type="button" class="btn btn-success" (click)="handleCancelAction()">Cancel</button>
       </div>
     </div>
   </div>
