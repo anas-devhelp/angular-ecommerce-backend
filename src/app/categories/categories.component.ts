@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
-//import * as faker from '../../../node_modules/faker';
+import { Location } from '@angular/common';
 import { Category } from '../interfaces/Category';
 import { CATEGORIES } from '../mock/mock-category';
 import { CategoryService } from '../service/category.service';
+
+
 
 @Component({
   selector: 'app-categories',
@@ -11,8 +13,8 @@ import { CategoryService } from '../service/category.service';
 })
 export class CategoriesComponent {
 
-
-  constructor(private categoryService: CategoryService) {}
+  
+  constructor(private categoryService: CategoryService, private location: Location) {}
 
   ngOnInit(): void {
     this.getCategories();
@@ -20,6 +22,7 @@ export class CategoriesComponent {
 
   
   categories: Category[] = [];
+  deleteId: number = 0;
 
   getCategories(): void {
     this.categoryService.getCategories().subscribe(categories => this.categories = categories); ;
@@ -34,22 +37,19 @@ export class CategoriesComponent {
       });
   }
 
-  delete(category: Category): void {
-    this.categories = this.categories.filter(h => h !== category);
-    this.categoryService.deleteCategory(category.id).subscribe();
+  delete(id: number): void {
+        //this.categories = this.categories.filter(h => h !== category);
+        this.categoryService.deleteCategory(id).subscribe(()=>{
+          this.deleteId = 0;
+          this.location.replaceState(this.location.path());
+          window.location.reload();  
+        });  
+        
   }
 
-  // category: Category = {
-
-  //   id:1,
-  //   title: 'Category A',
-  //   description: 'Category A description',
-  //   imageUrl: 'Image url'
-  // };
-
-  // selectedCategory?: Category;
-  // onSelect(category: Category): void {
-  //   this.selectedCategory = category;
-  // }
+  openCloseConfirmationDialog(id: number): void {
+    console.log('openConfirmationDialog:'+id);
+    this.deleteId = id;
+  }
 
 }

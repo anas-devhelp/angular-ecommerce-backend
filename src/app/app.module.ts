@@ -14,6 +14,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService } from './service/in-memory-data.service';
 import { CategorySearchComponent } from './categories/category-search/category-search.component';
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
+import { ConfirmAlertComponent } from './alerts/confirm-alert/confirm-alert.component';
 
 
 
@@ -24,7 +25,8 @@ import { CategoryFormComponent } from './categories/category-form/category-form.
     CategoryDetailComponent,
     DashboardComponent,
     CategorySearchComponent,
-    CategoryFormComponent
+    CategoryFormComponent,
+    ConfirmAlertComponent
   ],
   imports: [
     BrowserModule,
