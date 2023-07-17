@@ -1,3 +1,38 @@
+<div class="row my-5">
+  <h3 class="fs-4 mb-3">Categories</h3>
+  <div class="col">
+    <table class="table bg-white rounded shadow-sm  table-hover">
+      <thead>
+        <tr>
+          <th scope="col" width="50">#</th>
+          <th scope="col">Title</th>
+          <th scope="col">Slug</th>
+          <th scope="col">Image URL</th>
+          <th scope="col">Description</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let category of categories">
+          <th scope="row">1</th>
+            <td>{{category.title}}</td>
+            <td>{{category.slug}}</td>
+            <td>{{category.imageUrl}}</td>
+            <td>{{category.description}}</td>
+            <td>
+              <a routerLink="/categories/detail/{{category.id}}"> <span class="badge">{{category.id}}</span> {{category.title}}</a>
+              <span><button type="button" class="delete" title="delete category" (click)="delete(category)">x</button></span>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+          
+
+
+
+<div class="row my-5">
 <p>categories works!</p>
 <div>
   <label for="new-category">Category title: </label>
@@ -7,6 +42,7 @@
   <button type="button" class="add-button" (click)="add(categoryTitle.value); categoryTitle.value=''">
     Add category
   </button>
+</div>
 </div>
 <!-- <div>
   <label for="name">Category title:</label>
@@ -26,7 +62,7 @@
 </div> -->
 
 
-<h2>Categories</h2>
+<!-- <h2>Categories</h2>
 <ul class="categories">
   <li *ngFor="let category of categories">
     <a routerLink="/categories/detail/{{category.id}}">
@@ -34,11 +70,11 @@
     </a>
     <span><button type="button" class="delete" title="delete category"
   (click)="delete(category)">x</button></span>
-    <!-- <button [class.selected]="category === selectedCategory" type="button" (click)="onSelect(category)">
+    <button [class.selected]="category === selectedCategory" type="button" (click)="onSelect(category)">
       <span class="badge">{{category.id}}</span>
       <span class="name">{{category.title}}</span>
-    </button> -->
+    </button>
   </li>
-</ul>
+</ul> -->
 
 <!-- <app-category-detail [category]="selectedCategory"></app-category-detail> -->

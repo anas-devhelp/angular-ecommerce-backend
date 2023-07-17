@@ -1,12 +1,33 @@
-<p>dashboard works!</p>
+<!--https://therichpost.com/create-admin-dashboard-in-angular-16-with-backend-data/-->
+<div class="row">
+  <div class="col-md-12">
+    <div class="p-3 bg-white shadow-sm d-flex">
+      <div>
+        <h2>Top Categries</h2>
+      </div>
+    </div>  
+  </div>
+</div>  
+<div class="row g-3 my-2">
+  <div class="col-md-3" *ngFor="let category of categories">
+      <div class="p-3 bg-white shadow-sm d-flex">
+          <div>
+              <h3 class="fs-2"><a routerLink="/categories/detail/{{category.id}}">{{category.title}}</a></h3>
+              <p class="fs-5">{{category.slug}}</p>
+          </div>
+          <!-- <i class="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"><a routerLink="/categories/detail/{{category.id}}">{{category.title}}</a></i> -->
+      </div>
+  </div>
+</div>
+<!-- <p>dashboard works!</p>
 
 
-<h2>Top Categries</h2>
+
 <div class="categories-menu">
   <a *ngFor="let category of categories"  routerLink="/categories/detail/{{category.id}}">
     {{category.title}}
   </a>
-</div>
+</div> -->
 
 
 <!-- <h2>Top Categries</h2>
