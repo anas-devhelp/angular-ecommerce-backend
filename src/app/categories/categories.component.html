@@ -24,12 +24,7 @@
               <!-- <a routerLink="/categories/detail/{{category.id}}" class="bi bi-pencil-square"></a> -->
               <span><button routerLink="/categories/detail/{{category.id}}" type="button" class="bi bi-pencil-fill" title="Edit category"></button></span>&nbsp;
               <span>
-                <span><button id="delete-button-{{category.id}}" type="button" class="btn btn-danger" (click)="openCloseConfirmationDialog(category.id)">Delete</button></span>
-                <!-- <app-confirm-alert [message]="'Are you sure you want to delete this item?'" [id]="category.id" (confirm)="delete(category)">Delete</app-confirm-alert> -->
-                
-
-
-                <!-- <app-confirm-alert [message]="'Are you sure you want to delete this item?'" (confirm)="delete(category, $event)" (cancel)="closeConfirmationDialog()"></app-confirm-alert> -->
+                <span><button id="delete-button-{{category.id}}" type="button" class="bi bi-trash" (click)="openCloseConfirmationDialog(category.id)"></button></span>
               </span>
             </td>
         </tr>
@@ -40,53 +35,3 @@
   </div>
 </div>
 <app-confirm-alert [message]="'Are you sure you want to delete this item?'" [deleteId]="deleteId" (confirm)="delete($event)" (cancel)="openCloseConfirmationDialog($event)"></app-confirm-alert>
-
-
-<!-- <app-category-form></app-category-form> -->
-
-<!-- <div class="row my-5">
-<p>categories works!</p>
-<div>
-  <label for="new-category">Category title: </label>
-  <input id="new-category" #categoryTitle />
-
-  (click) passes input value to add() and then clears the input
-  <button type="button" class="add-button" (click)="add(categoryTitle.value); categoryTitle.value=''">
-    Add category
-  </button>
-</div>
-</div> -->
-<!-- <div>
-  <label for="name">Category title:</label>
-  <input id="name" [(ngModel)]="category.title" placeholder="Title">
-</div>
-
-<h2>{{category.title | uppercase}}</h2>
- -->
-
-<!-- <div *ngIf="selectedCategory">
-  <h2>{{selectedCategory.title | uppercase}} Details</h2>
-  <div>id: {{selectedCategory.id}}</div>
-  <div>
-    <label for="hero-name">Category title: </label>
-    <input id="hero-name" [(ngModel)]="selectedCategory.title" placeholder="title">
-  </div>
-</div> -->
-
-
-<!-- <h2>Categories</h2>
-<ul class="categories">
-  <li *ngFor="let category of categories">
-    <a routerLink="/categories/detail/{{category.id}}">
-      <span class="badge">{{category.id}}</span> {{category.title}}
-    </a>
-    <span><button type="button" class="delete" title="delete category"
-  (click)="delete(category)">x</button></span>
-    <button [class.selected]="category === selectedCategory" type="button" (click)="onSelect(category)">
-      <span class="badge">{{category.id}}</span>
-      <span class="name">{{category.title}}</span>
-    </button>
-  </li>
-</ul> -->
-
-<!-- <app-category-detail [category]="selectedCategory"></app-category-detail> -->

@@ -1,22 +1,24 @@
-<div *ngIf="category">
-  <div><img src="{{category.imageUrl}}" width="200px"></div>
-  <h2>{{category.title | uppercase}} Details</h2>
-  <div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" class="form-control" id="title" required [(ngModel)]="category.title">
+<div class="row" *ngIf="category">
+  <div class="col-12 col-lg-6 bg-white p-3" >
+    <div><img src="{{category.imageUrl}}" width="200px"></div>
+    <h2>{{category.title | uppercase}} Details</h2>
+    <div class="form-group mb-3">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" id="title" required [(ngModel)]="category.title">
+    </div>
+    <div class="form-group mb-3">
+      <label for="slug">Slug</label>
+      <input type="text" class="form-control" id="slug" [(ngModel)]="category.slug">
+    </div>
+    <div class="form-group mb-3">
+      <label for="description">Description</label>
+      <input type="text" class="form-control" id="description" [(ngModel)]="category.description">
+    </div>
+    <div class="form-group mb-3">
+      <label for="imageUrl">imageUrl</label>
+      <input type="text" class="form-control" id="imageUrl"  [(ngModel)]="category.imageUrl">
+    </div>
+    <button type="button" class="btn btn-success me-3" (click)="save()">Update</button>
+    <button type="button" class="btn btn-secondary" (click)="goBack()">Go back</button>
   </div>
-  <div class="form-group">
-    <label for="slug">Slug</label>
-    <input type="text" class="form-control" id="slug" [(ngModel)]="category.slug">
-  </div>
-  <div class="form-group">
-    <label for="description">Description</label>
-    <input type="text" class="form-control" id="description" [(ngModel)]="category.description">
-  </div>
-  <div class="form-group">
-    <label for="imageUrl">imageUrl</label>
-    <input type="text" class="form-control" id="imageUrl"  [(ngModel)]="category.imageUrl">
-  </div>
-  <button type="button" class="btn btn-success" (click)="save()">Update</button>
-  <button type="button" class="btn btn-success" (click)="goBack()">go back</button>
 </div>
