@@ -45,7 +45,7 @@ export class CategoryService {
 
   /** PUT: update the category on the server */
   updateCategory(category: Category): Observable<any> {
-    return this.http.put(this.categoriesUrl, category, this.httpOptions).pipe(
+    return this.http.put(`${this.categoriesUrl}/${category.id}`, category, this.httpOptions).pipe(
       tap(_ => this.log(`updated category id=${category.id}`)),
       catchError(this.handleError<any>('updateCategory'))
     );

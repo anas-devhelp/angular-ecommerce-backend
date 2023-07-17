@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 //import { InMemoryDataService } from './service/in-memory-data.service';
 import { CategorySearchComponent } from './categories/category-search/category-search.component';
+import { CategoryFormComponent } from './categories/category-form/category-form.component';
 
 
 
@@ -22,7 +23,8 @@ import { CategorySearchComponent } from './categories/category-search/category-s
     CategoriesComponent,
     CategoryDetailComponent,
     DashboardComponent,
-    CategorySearchComponent
+    CategorySearchComponent,
+    CategoryFormComponent
   ],
   imports: [
     BrowserModule,

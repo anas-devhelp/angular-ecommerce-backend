@@ -24,26 +24,29 @@
               <span><button type="button" class="delete" title="delete category" (click)="delete(category)">x</button></span>
             </td>
         </tr>
+        <a routerLink="/add-category"> <span class="badge">Add new</span></a>
       </tbody>
     </table>
+
   </div>
 </div>
           
 
 
+<!-- <app-category-form></app-category-form> -->
 
-<div class="row my-5">
+<!-- <div class="row my-5">
 <p>categories works!</p>
 <div>
   <label for="new-category">Category title: </label>
   <input id="new-category" #categoryTitle />
 
-  <!-- (click) passes input value to add() and then clears the input -->
+  (click) passes input value to add() and then clears the input
   <button type="button" class="add-button" (click)="add(categoryTitle.value); categoryTitle.value=''">
     Add category
   </button>
 </div>
-</div>
+</div> -->
 <!-- <div>
   <label for="name">Category title:</label>
   <input id="name" [(ngModel)]="category.title" placeholder="Title">
