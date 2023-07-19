@@ -81,9 +81,15 @@
       </nav>
 
       <div class="container-fluid px-4">
-      		
-          
-          <router-outlet></router-outlet>
+        <div class="row">
+          <div class="col-12 col-sm-3 mb-1">
+            <div class="w-100 bg-white p-1 shadow">
+              <button routerLink="/dashboard"  type="button" class="btn btn-success me-2" tabindex="0">Dashboard</button>
+              <button routerLink="/categories" type="button" class="btn btn-success" tabindex="0">Categories</button>
+            </div>
+          </div>
+        </div>  
+        <router-outlet></router-outlet>
           <!-- <div class="row my-5">
               <h3 class="fs-4 mb-3">Recent Orders</h3>
               <div class="col">
